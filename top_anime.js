@@ -8,9 +8,9 @@ kvadrat.addEventListener("mouseover", openlist);
 const list = document.querySelector("#list");
 
 function openlist() {
-    for (let i = 0; i < topAnime.length; i++) {
+    for(let i = 0; i < topAnime.length; i++) {
         const toplist = topAnime[i];
+        document.createTextNode(toplist)
         console.log(toplist);
-        list.innerHTML = toplist;
     }
 }
