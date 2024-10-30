@@ -6,20 +6,23 @@ const kvadrat = document.querySelector("#box");
 kvadrat.addEventListener("mouseover", openlist);
 kvadrat.addEventListener("mouseout", deletelist);
 
-const createlist = document.createElement("ul");
-createlist.className = "list";
+
 
 function openlist() {
     for(let i = 0; i < topAnime.length; i++) {
-        const li = document.createElement("li");
-        li.className = "anime";
-        li.innerHTML = topAnime[i];
-        createlist.append(li);
-      }; 
+      const li = document.createElement("p");
+      li.className = "anime";
+      li.innerHTML = topAnime[i];
+      document.body.append(li);
+    } 
 }
 
-document.body.prepend(createlist);
+
 
 function deletelist() {
-const ping = document.querySelector(".anime").remove();
+  const spisok = document.querySelector(".anime");
+  for(let i = 0; i < spisok.length; i++) {
+  
+  }
+  console.log(spisok[i])
 }
