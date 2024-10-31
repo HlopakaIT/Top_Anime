@@ -12,7 +12,6 @@ function createlist() {
   const content = document.getElementById("content");
   const animeList = document.createElement("div");
   animeList.id ="anime-list";
-  content.append(animeList);
 
   for(let i = 0; i < topAnime.length; i++) {
     const li = document.createElement("p");
@@ -20,7 +19,7 @@ function createlist() {
     li.innerHTML = topAnime[i];
     animeList.append(li);
   }
-   
+  content.append(animeList);
 }
 
 
