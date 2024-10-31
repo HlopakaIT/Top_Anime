@@ -1,26 +1,30 @@
 const topAnime = ["No Game No Life: Zero", "Ping Pong the Animation",
 "No Game No Life", "Prince of Stride: Alternative", "Ao Ashi"];
  
-const kvadrat = document.querySelector("#box");
+const trigger = document.getElementById("box");
 
-kvadrat.addEventListener("mouseover", openlist);
-kvadrat.addEventListener("mouseout", deletelist);
+trigger.addEventListener("mouseover", createlist);
+trigger.addEventListener("mouseout", deletelist);
 
 
+function createlist() {
 
-function openlist() {
+  const content = document.getElementById("content");
+  const animeList = document.createElement("div");
+  animeList.id ="anime-list";
+  content.append(animeList);
+
   for(let i = 0; i < topAnime.length; i++) {
     const li = document.createElement("p");
-    li.className = "anime";
+    li.classList.add("anime");
     li.innerHTML = topAnime[i];
-    document.body.append(li);
-  } 
+    animeList.append(li);
+  }
+   
 }
 
 
 function deletelist() {
-  const spisok = document.querySelectorAll(".anime");
-  for(let i = 0; i < spisok.length; i++) {
-  spisok[i].remove()
-  }
+  const myAnimeList = document.getElementById("anime-list");
+  myAnimeList.remove()
 }
